@@ -69,7 +69,7 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
         
     }
     
-    func batteryChanged() {
+    @objc func batteryChanged() {
         let device = UIDevice.current
         var batteryState: String
         switch (device.batteryState) {

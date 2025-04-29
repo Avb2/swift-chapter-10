@@ -54,13 +54,13 @@ class ContactsViewController: UIViewController, UITextFieldDelegate, DateControl
             let cameraController = UIImagePickerController()
             cameraController.sourceType = .camera
             cameraController.cameraCaptureMode = .photo
-            cameraController.delegate = true
+            cameraController.delegate = self
             self.present(cameraController, animated: true, completion: nil)
         }
     }
     
     func imagePickerController(_picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
-        if let image = info[.editImage] as? UIImage {
+        if let image = info[.editedImage] as? UIImage {
             imgContactPicture.contentMode = .scaleAspectFit
             imgContactPicture.image = image
         }
