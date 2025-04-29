@@ -29,8 +29,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
     }
     @IBAction func findUser(_ sender: Any) {
-        mapView.showsUserLocation = true
-        mapView.setUserTrackingMode(.follow, animated: true)
+        mapView.showAnnotations(mapView.annotations, animated: true)
     }
 
     override func viewDidLoad() {
@@ -100,7 +99,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
 
         let mp = MapPoint(latitude: coordinate.latitude, longitude: coordinate.longitude)
         mp.title = contact.contactName
-        mp.subtitle = contact.streetAddress
+        mp.subtitle = "\(contact.streetAddress ?? "")\n\(contact.email ?? "")"
+        
         mapView.addAnnotation(mp)
     }
 }

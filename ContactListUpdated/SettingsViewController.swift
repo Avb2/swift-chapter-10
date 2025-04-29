@@ -12,21 +12,36 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBOutlet weak var pckSortField: UIPickerView!
     @IBOutlet weak var swAscending: UISwitch!
     
+    @IBOutlet weak var lblBattery: UILabel!
     let sortOrderItems: Array<String> = ["contactName", "city", "birthday", "email"]
     
     override func viewWillAppear(_ animated: Bool){
-        let settings = UserDefaults.standard
-        swAscending.setOn(settings.bool(forKey: Constants.kSortDirectionAscending), animated: true)
-        let sortField = settings.string(forKey: Constants.kSortField)
-         var i = 0
-        for field in sortOrderItems{
-            if field == sortField {
-                pckSortField.selectRow(i, inComponent: 0, animated: false)
-            }
-            i += 1
+        let device = UIDevice.current
+        let orientation: String
+        
+        switch device.orientation {
+        case .faceDown:
+            orientation = "Face Down"
+        case .landscapeLeft:
+            orientation = "Landscape left"
+        case .portrait:
+            orientation = "Portrait"
+        case .landscapeRight:
+            orientation = "Landscape right"
+        case .faceUp:
+            orientation = "Face Up"
+        case .portraitUpsideDown:
+            orientation = "Portrait Upside Down"
+        case .unknown:
+            orientation = "Unknown Orientation"
+        default:
+            fatalError()
         }
-        pckSortField.reloadComponent(0)
+        
+        print("Orientation: \(orientation)")
     }
+    
+    
     
 
     @IBAction func sortDirectionChanged(_ sender: Any) {
@@ -42,6 +57,12 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
         // Do any additional setup after loading the view.
         pckSortField.dataSource = self
         pckSortField.delegate = self
+        
+        UIDevice.current.isBatteryMonitoringEnabled = true
+        NotificationCenter.default.addObserver(self, selector: #selector(self.batteryChanged), name: UIDevice.batteryStateDidChangeNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.batteryChanged), name: UIDevice.batteryLevelDidChangeNotification, object: nil)
+        self.batteryChanged()
+        
     }
 
 

@@ -104,16 +104,26 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GWN-4F-RrG">
+                                <rect key="frame" x="351.66666666666669" y="59.000000000000007" width="41.333333333333314" height="20.333333333333336"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7BE-Lm-COJ"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="7BE-Lm-COJ" firstAttribute="trailing" secondItem="GWN-4F-RrG" secondAttribute="trailing" id="HWi-RH-7Ik"/>
+                            <constraint firstItem="GWN-4F-RrG" firstAttribute="top" secondItem="7BE-Lm-COJ" secondAttribute="top" id="cpN-cE-8dF"/>
+                            <constraint firstItem="GWN-4F-RrG" firstAttribute="trailing" secondItem="7BE-Lm-COJ" secondAttribute="trailing" id="iJK-AN-IFX"/>
                             <constraint firstItem="YhF-CZ-uhj" firstAttribute="centerX" secondItem="VkL-5I-lQl" secondAttribute="centerX" id="l3C-jl-Brb"/>
                             <constraint firstItem="YhF-CZ-uhj" firstAttribute="centerY" secondItem="VkL-5I-lQl" secondAttribute="centerY" id="zeE-gX-Mf0"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Settings" image="sample-834-bolt" id="AAk-mH-ArT"/>
                     <connections>
+                        <outlet property="lblBattery" destination="GWN-4F-RrG" id="nGQ-AQ-dRv"/>
                         <outlet property="pckSortField" destination="eA6-xO-V2n" id="F7v-EL-hE4"/>
                         <outlet property="swAscending" destination="QSg-mC-Oje" id="BYN-jG-Ab5"/>
                     </connections>
