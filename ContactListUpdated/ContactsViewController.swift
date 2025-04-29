@@ -63,7 +63,19 @@ class ContactsViewController: UIViewController, UITextFieldDelegate, DateControl
         if let image = info[.editedImage] as? UIImage {
             imgContactPicture.contentMode = .scaleAspectFit
             imgContactPicture.image = image
+            
+            if currentContact == nil {
+
+            let context = appDelegate.persistentContainer.viewContext
+
+            currentContact = Contact(context: context)
+
+            }
+
+            currentContact?.image = image.jpegData(compressionQuality: 1.0)
         }
+        
+        
         dismiss(animated: true, completion: nil)
     }
     
@@ -91,6 +103,12 @@ class ContactsViewController: UIViewController, UITextFieldDelegate, DateControl
             formatter.dateStyle = .short
             if currentContact!.birthday != nil {
                 labelBirthdate.text = formatter.string(from: currentContact!.birthday as! Date)
+            }
+            
+            if let imageData = currentContact?.image as? Data {
+
+            imgContactPicture.image = UIImage(data: imageData)
+
             }
         }
         
