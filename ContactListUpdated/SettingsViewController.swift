@@ -41,6 +41,10 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
         print("Orientation: \(orientation)")
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        UIDevice.current.isBatteryMonitoringEnabled = false
+    }
     
     
 
