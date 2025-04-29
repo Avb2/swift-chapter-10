@@ -6,14 +6,37 @@
 //
 
 import UIKit
+import CoreMotion
+
 
 class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
+    @IBOutlet var topView: UIView!
     @IBOutlet weak var pckSortField: UIPickerView!
     @IBOutlet weak var swAscending: UISwitch!
     
     @IBOutlet weak var lblBattery: UILabel!
     let sortOrderItems: Array<String> = ["contactName", "city", "birthday", "email"]
+    
+    
+    func updateLabel(data: CMAccelerometerData){
+        let statusBarHeight = UIApplication.shared.statusBarFrame.height
+        let tabBarHeight = self.tabBarController?.tabBar.frame.height
+        let moveFactor: Double = 15.0
+        var rect = lblBattery.frame
+        let moveToX = Double(rect.origin.x) + data.acceleration.x * moveFactor
+        let moveToY = Double(rect.origin.y + rect.size.height) - data.acceleration.y * moveFactor
+        let maxX = Double(topView.frame.size.width - rect.width)
+        let maxY = Double(topView.frame.size.height - tabBarHeight!)
+        let minY = Double(rect.size.height + statusBarHeight)
+        if (moveToX > 0 && moveToX < maxX) {
+            rect.origin.x = CGFloat(data.acceleration.x * moveFactor)
+        }
+        if (moveToY > minY && moveToY < maxY) {
+            rect.origin.y -= CGFloat(data.acceleration.y * moveFactor)
+        }
+        UIView.animate(withDuration: TimeInterval(0), delay: 0, options: UIView.AnimationOptions.curveEaseInOut, animations: {self.lblBattery.frame = rect}, completion: nil)
+    }
     
     override func viewWillAppear(_ animated: Bool){
         let device = UIDevice.current
@@ -41,10 +64,35 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
         print("Orientation: \(orientation)")
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.startMotionDetection()
+
+
+    }
+    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         UIDevice.current.isBatteryMonitoringEnabled = false
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.motionManager.stopAccelerometerUpdates()
     }
+    
+    
+    func startMotionDetection() {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let mManager = appDelegate.motionManager
+        if mManager.isAccelerometerAvailable {
+            mManager.accelerometerUpdateInterval = 0.5
+            mManager.startAccelerometerUpdates(to: OperationQueue.main) { (data, error) in
+                if let data = data {
+                    self.updateLabel(data: data)
+                }
+            }
+        }
+    }
+
+    
     
     
 

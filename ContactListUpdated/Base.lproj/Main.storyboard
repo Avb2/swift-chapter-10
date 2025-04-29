@@ -126,6 +126,7 @@
                         <outlet property="lblBattery" destination="GWN-4F-RrG" id="nGQ-AQ-dRv"/>
                         <outlet property="pckSortField" destination="eA6-xO-V2n" id="F7v-EL-hE4"/>
                         <outlet property="swAscending" destination="QSg-mC-Oje" id="BYN-jG-Ab5"/>
+                        <outlet property="topView" destination="VkL-5I-lQl" id="S5W-Tb-Scb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tt2-AN-BPu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
