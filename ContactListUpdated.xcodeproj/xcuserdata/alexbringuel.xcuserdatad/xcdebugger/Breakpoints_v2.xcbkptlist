@@ -3,4 +3,210 @@
    uuid = "F1537F02-2E5A-4977-8878-E748F5EB5D16"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BD0F146C-CE40-4CBA-A205-C74CD8ED7650"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ContactListUpdated/ContactsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "ContactsViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "BD0F146C-CE40-4CBA-A205-C74CD8ED7650 - c8e38c3206f459ae"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ContactListUpdated.ContactsViewController.txtEmail.getter : Swift.Optional&lt;__C.UITextField&gt;"
+                  moduleName = "ContactListUpdated.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexbringuel/Development/ContactListUpdated/ContactListUpdated/ContactsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0">
+               </Location>
+               <Location
+                  uuid = "BD0F146C-CE40-4CBA-A205-C74CD8ED7650 - 82d164d72fb26da2"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ContactListUpdated.ContactsViewController.txtEmail.setter : Swift.Optional&lt;__C.UITextField&gt;"
+                  moduleName = "ContactListUpdated.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexbringuel/Development/ContactListUpdated/ContactListUpdated/ContactsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0">
+               </Location>
+               <Location
+                  uuid = "BD0F146C-CE40-4CBA-A205-C74CD8ED7650 - 4b25fc8da9afb934"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ContactListUpdated.ContactsViewController.txtEmail.modify : Swift.Optional&lt;__C.UITextField&gt;"
+                  moduleName = "ContactListUpdated.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexbringuel/Development/ContactListUpdated/ContactListUpdated/ContactsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35">
+               </Location>
+               <Location
+                  uuid = "BD0F146C-CE40-4CBA-A205-C74CD8ED7650 - fddf39db3f9754f6"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ContactListUpdated.ContactsViewController.txtEmail.modify : Swift.Optional&lt;__C.UITextField&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "ContactListUpdated.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0">
+               </Location>
+               <Location
+                  uuid = "BD0F146C-CE40-4CBA-A205-C74CD8ED7650 - 4c147d7235d114c9"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ContactListUpdated.ContactsViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; ContactListUpdated.ContactsViewController"
+                  moduleName = "ContactListUpdated.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexbringuel/Development/ContactListUpdated/ContactListUpdated/ContactsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35">
+               </Location>
+               <Location
+                  uuid = "BD0F146C-CE40-4CBA-A205-C74CD8ED7650 - c45d86ead30e1b9d"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ContactListUpdated.ContactsViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;ContactListUpdated.ContactsViewController&gt;"
+                  moduleName = "ContactListUpdated.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexbringuel/Development/ContactListUpdated/ContactListUpdated/ContactsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "35"
+                  endingLineNumber = "35">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "254B2668-6346-4EFD-A38A-CB330CBA7DB8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ContactListUpdated/ContactsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "ContactsViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  uuid = "254B2668-6346-4EFD-A38A-CB330CBA7DB8 - 93df35db2ee59d46"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ContactListUpdated.ContactsViewController.labelBirthdate.getter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "ContactListUpdated.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexbringuel/Development/ContactListUpdated/ContactListUpdated/ContactsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0">
+               </Location>
+               <Location
+                  uuid = "254B2668-6346-4EFD-A38A-CB330CBA7DB8 - 732be20f56fbc17a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ContactListUpdated.ContactsViewController.labelBirthdate.setter : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "ContactListUpdated.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexbringuel/Development/ContactListUpdated/ContactListUpdated/ContactsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0">
+               </Location>
+               <Location
+                  uuid = "254B2668-6346-4EFD-A38A-CB330CBA7DB8 - 5bff9e856227c951"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ContactListUpdated.ContactsViewController.labelBirthdate.modify : Swift.Optional&lt;__C.UILabel&gt;"
+                  moduleName = "ContactListUpdated.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexbringuel/Development/ContactListUpdated/ContactListUpdated/ContactsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38">
+               </Location>
+               <Location
+                  uuid = "254B2668-6346-4EFD-A38A-CB330CBA7DB8 - 3f953ceae86be303"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ContactListUpdated.ContactsViewController.labelBirthdate.modify : Swift.Optional&lt;__C.UILabel&gt; with unmangled suffix &quot;.resume.0&quot;"
+                  moduleName = "ContactListUpdated.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0">
+               </Location>
+               <Location
+                  uuid = "254B2668-6346-4EFD-A38A-CB330CBA7DB8 - 4c147d7235d11454"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ContactListUpdated.ContactsViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; ContactListUpdated.ContactsViewController"
+                  moduleName = "ContactListUpdated.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexbringuel/Development/ContactListUpdated/ContactListUpdated/ContactsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38">
+               </Location>
+               <Location
+                  uuid = "254B2668-6346-4EFD-A38A-CB330CBA7DB8 - c45d86ead30e1b00"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "ContactListUpdated.ContactsViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;ContactListUpdated.ContactsViewController&gt;"
+                  moduleName = "ContactListUpdated.debug.dylib"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alexbringuel/Development/ContactListUpdated/ContactListUpdated/ContactsViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "38"
+                  endingLineNumber = "38">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

@@ -194,7 +194,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ba8-yg-eT4">
                                                         <rect key="frame" x="0.0" y="0.0" width="171.66666666666666" height="54.333333333333336"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cell Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNO-cm-8ia">
+                                                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cell Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DNO-cm-8ia">
                                                                 <rect key="frame" x="0.0" y="0.0" width="171.66666666666666" height="20.333333333333332"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <nil key="textColor"/>
@@ -349,6 +349,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="btnChange" destination="nMc-ZT-jT6" id="YAk-nY-hld"/>
+                        <outlet property="cellPhoneLabel" destination="DNO-cm-8ia" id="Iwj-Es-aiZ"/>
                         <outlet property="imgContactPicture" destination="mls-Qq-K3I" id="WaG-ZS-Qn3"/>
                         <outlet property="labelBirthdate" destination="rK3-tu-KnN" id="rpc-Ay-LJJ"/>
                         <outlet property="sgmtEditMode" destination="VjA-mf-BcS" id="iVx-rw-qry"/>

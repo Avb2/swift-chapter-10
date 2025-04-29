@@ -37,6 +37,9 @@ class ContactsViewController: UIViewController, UITextFieldDelegate, DateControl
     @IBOutlet weak var btnChange: UIButton!
     @IBOutlet weak var labelBirthdate: UILabel!
     
+    @IBOutlet weak var cellPhoneLabel: UILabel!
+    
+    
     func dateChanged(date: Date) {
         if currentContact == nil {
             let context = appDelegate.persistentContainer.viewContext
@@ -108,6 +111,15 @@ class ContactsViewController: UIViewController, UITextFieldDelegate, DateControl
             if let imageData = currentContact?.image as? Data {
 
             imgContactPicture.image = UIImage(data: imageData)
+                
+                
+            let longPress = UILongPressGestureRecognizer.init(target: self,
+
+            action: #selector(callPhone(gesture:)))
+
+                cellPhoneLabel.addGestureRecognizer(longPress)
+
+
 
             }
         }
@@ -139,6 +151,18 @@ class ContactsViewController: UIViewController, UITextFieldDelegate, DateControl
         currentContact?.email = txtEmail.text
         return true
     }
+    
+    
+    func callPhone(gesture: UILongPressGestureRecognizer) {
+        if gesture.state == .began {
+            guard let number = txtPhone.text, !number.isEmpty else { return }
+            if let url = URL(string: "tel://\(number)") {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                print("Calling phone \(url)")
+            }
+        }
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
