@@ -64,6 +64,26 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
         self.batteryChanged()
         
     }
+    
+    func batteryChanged() {
+        let device = UIDevice.current
+        var batteryState: String
+        switch (device.batteryState) {
+        case .charging:
+            batteryState = "+"
+        case .full:
+            batteryState = "!"
+        case .unplugged:
+            batteryState = "-"
+        case .unknown:
+            batteryState = "?"
+        }
+        
+        let batteryLevelPercent = device.batteryLevel * 100
+        let batteryLevel = String(format: "%.0f%%", batteryLevelPercent)
+        let batteryStatus = "\(batteryState) \(batteryLevel)"
+        lblBattery.text = batteryStatus
+    }
 
 
     
