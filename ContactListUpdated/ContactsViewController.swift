@@ -7,7 +7,9 @@
 import UIKit
 import CoreData
 
-class ContactsViewController: UIViewController, UITextFieldDelegate, DateControllerDelegate {
+class ContactsViewController: UIViewController, UITextFieldDelegate, DateControllerDelegate,
+                              UIImagePickerControllerDelegate, UINavigationControllerDelegate
+{
     var currentContact: Contact?
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
@@ -48,6 +50,13 @@ class ContactsViewController: UIViewController, UITextFieldDelegate, DateControl
                                      
     
     @IBAction func changePicture(_ sender: UIButton) {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            let cameraController = UIImagePickerController()
+            cameraController.sourceType = .camera
+            cameraController.cameraCaptureMode = .photo
+            cameraController.delegate = true
+            self.present(cameraController, animated: true, completion: nil)
+        }
     }
     
     
