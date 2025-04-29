@@ -6,6 +6,8 @@
 //
 import UIKit
 import CoreData
+import AVFoundation
+
 
 class ContactsViewController: UIViewController, UITextFieldDelegate, DateControllerDelegate,
                               UIImagePickerControllerDelegate, UINavigationControllerDelegate
@@ -53,14 +55,37 @@ class ContactsViewController: UIViewController, UITextFieldDelegate, DateControl
                                      
     
     @IBAction func changePicture(_ sender: UIButton) {
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            let cameraController = UIImagePickerController()
-            cameraController.sourceType = .camera
-            cameraController.cameraCaptureMode = .photo
-            cameraController.delegate = self
-            self.present(cameraController, animated: true, completion: nil)
+        if AVCaptureDevice.authorizationStatus(for: AVMediaType.video) != AVAuthorizationStatus.authorized
+            {
+            let alertController = UIAlertController(title: "Camera Access Denied", message: "In order to take pictures, allow the app to access the camera in the settings", preferredStyle: .alert)
+            
+            let actionSettings = UIAlertAction(title: "Open Settings", style: .default) {
+                action in
+                self.openSettings()
+            }
+            let actionCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+            alertController.addAction(actionSettings)
+            alertController.addAction(actionCancel)
+            present(alertController, animated: true, completion: nil)
+        }
+        else {
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                let cameraController = UIImagePickerController()
+                cameraController.sourceType = .camera
+                cameraController.cameraCaptureMode = .photo
+                cameraController.delegate = self
+                self.present(cameraController, animated: true, completion: nil)
+            }
+        }
+        
+    }
+    
+    func openSettings() {
+        if let settingsUrl = URL(string: UIApplication.openSettingsURLString) {
+            UIApplication.shared.open(settingsUrl, options: [:], completionHandler: nil)
         }
     }
+
     
     func imagePickerController(_picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
         if let image = info[.editedImage] as? UIImage {
@@ -153,7 +178,7 @@ class ContactsViewController: UIViewController, UITextFieldDelegate, DateControl
     }
     
     
-    func callPhone(gesture: UILongPressGestureRecognizer) {
+    @objc func callPhone(gesture: UILongPressGestureRecognizer) {
         if gesture.state == .began {
             guard let number = txtPhone.text, !number.isEmpty else { return }
             if let url = URL(string: "tel://\(number)") {
