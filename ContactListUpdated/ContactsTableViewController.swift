@@ -61,6 +61,7 @@ class ContactsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let selectedContact = contacts[indexPath.row] as? Contact
         let name = selectedContact!.contactName!
+        let city = selectedContact!.city!
         let actionHandler = {
             (action: UIAlertAction!) -> Void in
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -70,11 +71,12 @@ class ContactsTableViewController: UITableViewController {
             self.navigationController?.pushViewController(controller!, animated: true)
         }
         
-        let alertController = UIAlertController(title: "Contact selected", message: "Selected Row: \(indexPath.row) (\(name))",
+        let alertController = UIAlertController(title: "City selected", message: "Selected Row: \(indexPath.row) (\(city))",
                                                 preferredStyle: .alert)
         
         let actionCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         let actionDetails = UIAlertAction(title: "Show Details", style: .default, handler: actionHandler)
+        
         
         alertController.addAction(actionCancel)
         alertController.addAction(actionDetails)
